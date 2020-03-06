@@ -1,0 +1,12 @@
+version: '3'
+services:
+  influxdb:
+    image: "influxdb"
+    container_name: "influxdb"
+    environment:
+      - INFLUXDB_REPORTING_DISABLED=true
+    ports:
+      - 8086:8086
+    volumes:
+      - ./var/lib/influxdb:/var/lib/influxdb
+    restart: always
